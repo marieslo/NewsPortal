@@ -1,7 +1,7 @@
 from pathlib import Path
 import os
 from dotenv import load_dotenv
-
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -158,7 +158,7 @@ EMAIL_HOST_USER = os.getenv('MAIL_USER')
 EMAIL_HOST_PASSWORD = os.getenv('MAIL_PASSWORD')
 EMAIL_USE_SSL = True
 
-DEFAULT_FROM_EMAIL = admin@newsportal.ru
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER + @gmail.com
 
 CELERY_BROKER_URL = 'redis://localhost:6379'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379'
@@ -265,4 +265,3 @@ LOGGING = {
             'propagate': True,
         },
     }
-}
